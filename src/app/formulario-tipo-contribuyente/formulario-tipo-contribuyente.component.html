@@ -1,0 +1,25 @@
+<body>
+    <div class="contact-form">
+        <h2>===========================================</h2>
+        <h2>=============================</h2>
+        <h2>Formulario</h2>
+        
+            <div class="input-group">
+                <label for="idTipoContribuyente">idTipoContribuyente</label>
+                <input type="number" id="idTipoContribuyente" name="idTipoContribuyente" [(ngModel)]="NewContribuyente.idTipoContribuyente" placeholder="idTipoContribuyente">
+            </div>
+            <div class="input-group">
+                <label for="nombre">nombre</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="NewContribuyente.nombre" placeholder="nombre">
+            </div>
+            
+            <div class="input-group">
+                <label for="estado">Estado</label>
+                <input type="checkbox" id="estado" name="estado" [(ngModel)]="NewContribuyente.estado">
+              </div>
+            
+            <button (click)="createNewContribuyente(NewContribuyente)">Guardar</button>
+        
+    </div>
+</body>
+

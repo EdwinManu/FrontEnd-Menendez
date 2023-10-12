@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Contribuyentes</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tipo de Contribuyentes</h1>
+        <button class="btn-regresar2" (click)="regresar2()">« Regresar</button>
+        <button class="btn-new" (click)="addNewContribuyente()">Nuevo +</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>idTipoContribuyente</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample row -->
+                <tr *ngFor="let tipoContribuyente of tiposContribuyente">
+                    <td>{{ tipoContribuyente.idTipoContribuyente }}</td>
+                    <td>{{ tipoContribuyente.nombre }}</td>
+                    <td>{{ tipoContribuyente.estado }}</td>
+                    <td><button class="btn-edit" (click)="updateTipoContribuyente()">🖉</button></td>
+                    <td><button class="btn-delete" (click)="deleteTipoContribuyente(tipoContribuyente!.idTipoContribuyente!)">🗑️</button></td>
+                    <!-- Otros campos -->
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<router-outlet></router-outlet>

@@ -1,0 +1,54 @@
+<body>
+    <div class="contact-form">
+        <h2>===========================================</h2>
+        <h2>===========================================</h2>
+        <h2>Formulario</h2>
+        
+            <div class="input-group">
+                <label for="idEntidad">ID Entidad</label>
+                <input type="text" id="idEntidad" name="idEntidad" [(ngModel)]="newEntity.idEntidad" placeholder="idEntida">
+            </div>
+            
+            <div class="input-group">
+                <label for="idTipoDocumento">ID Tipo Documento</label>
+                <select id="idTipoDocumento" name="idTipoDocumento" [(ngModel)]="newEntity.tipoDocumento">
+                    <option *ngFor="let type of tipoDocumentos" [value]="type">{{ type.nombre }}</option>
+                  </select>
+            </div>
+            <div class="input-group">
+                <label for="nroDocumento">nro. Documento</label>
+                <input type="text" id="nroDocumento" name="nroDocumento" [(ngModel)]="newEntity.nroDocumento" placeholder="nroDocumento">
+            </div>
+            <div class="input-group">
+                <label for="razonSocial">Razon Social</label>
+                <input type="text" id="razonSocial" name="razonSocial" [(ngModel)]="newEntity.razonSocial" placeholder="razonSocial">
+            </div>
+          <div class="input-group">
+                <label for="nombreComercial">Nombre Comercial</label>
+                <input type="text" id="nombreComercial" name="nombreComercial" [(ngModel)]="newEntity.nombreComercial" placeholder="nombreComercial">
+            </div>
+          
+            <div class="input-group">
+                <label for="idTipoContribuyente">ID TipoContribuyente</label>
+                <select id="idTipoContribuyente" name="idTipoContribuyente" [(ngModel)]="newEntity.tipoContribuyente">
+                    <option *ngFor="let type of tipoContribuyente" [value]="type">{{ type.nombre }}</option>
+                  </select>
+            </div>
+           <div class="input-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" id="direccion" name="direccion" [(ngModel)]="newEntity.direccion" placeholder="direccion">
+            </div>
+           <div class="input-group">
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" name="telefono" [(ngModel)]="newEntity.telefono" placeholder="idTipoContribuyente">
+            </div>
+            <div class="input-group">
+                <label for="estado">Estado</label>
+                <input type="checkbox" id="estado" name="estado" [(ngModel)]="newEntity.estado">
+              </div>
+            
+            <button (click)="createNewEntity(newEntity)">Guardar</button>
+        
+    </div>
+</body>
+

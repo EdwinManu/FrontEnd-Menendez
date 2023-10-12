@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Documento</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tipo de Documento</h1>
+        <button class="btn-regresar" (click)="regresar()">« Regresar</button>
+        <button class="btn-new" (click)="addNewDocumento()">Nuevo +</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>idTipoDocumento</th>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample row -->
+                <tr *ngFor="let tipodocumento of tiposDocumento">
+                    <td>{{ tipodocumento.idTipoDocumento }}</td>
+                    <td>{{ tipodocumento.codigo }}</td>
+                    <td>{{ tipodocumento.nombre }}</td>
+                    <td>{{ tipodocumento.descripcion }}</td>
+                    <td>{{ tipodocumento.estado }}</td>
+                    <td><button class="btn-edit" (click)="updateTipoDocumento()">🖉</button></td>
+                    <td><button class="btn-delete" (click)="deleteTipoDocumento(tipodocumento!.idTipoDocumento!)">🗑️</button></td>
+                    <!-- Otros campos -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<router-outlet></router-outlet>

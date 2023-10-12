@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entidades</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>Entidades</h1>
+        <button class="btn-regresar" (click)="regresar3()">« Regresar</button>
+        <button class="btn-new" (click)="addNewEntity()">Nuevo +</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>id Entidad</th>
+                    <th>id Tipo Documento</th>
+                    <th>nro. Documento</th>
+                    <th>Razon Social</th>
+                    <th>Nombre Comercial</th>
+                    <th>id Tipo Contribuyente</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample row -->
+                <tr *ngFor="let Entidad of entidades">
+                    <td>{{ Entidad.idEntidad }}</td>
+                    <td>{{ Entidad.tipoDocumento!.idTipoDocumento }}</td>
+                    <td>{{ Entidad.nroDocumento }}</td>
+                    <td>{{ Entidad.razonSocial }}</td>
+                    <td>{{ Entidad.nombreComercial }}</td>
+                    <td>{{ Entidad.tipoContribuyente!.idTipoContribuyente }}</td>
+                    <td>{{ Entidad.direccion }}</td>
+                    <td>{{ Entidad.telefono }}</td>
+                    <td>{{ Entidad.estado }}</td>
+                    <td><button class="btn-edit" (click)="updateEntidad(Entidad!.idEntidad!)">🖉</button></td>
+                    <td><button class="btn-delete" (click)="deleteEntidad(Entidad!.idEntidad!)">🗑️</button></td>
+                    <!-- Otros campos -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<router-outlet></router-outlet>
+
